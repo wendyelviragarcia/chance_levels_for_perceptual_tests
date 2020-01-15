@@ -7,4 +7,5 @@ A Excel file with the following format:
 * -0.88	Statement	64
 
 
-
+## Output
+![image](output.png)
