@@ -4,10 +4,10 @@
 #
 ###########################
 library(readxl)
-myData <- as.data.frame(read_excel("C:/Users/labfonub99/OneDrive - UNED/2020-CIFE/0paper_WAPA/grafico_11_valencia_datos_reconstruidos.xlsx"))
+myData <- as.data.frame(read_excel("C:/Users/labfonub99/OneDrive - UNED/2020-CIFE/0paper_WAPA/input.xlsx"))
 
 twoOptions <- 0.5
-numAnswers <- 100
+numAnswers <- 120
 yourResult <- 50
 
 
@@ -56,7 +56,7 @@ pbinom(yourResult,nAnswers,0.5,lower.tail=FALSE)
     #compute upper limit
     possResult <-numAnswers-1
     pValue = 0
-    while ((possResult > 0) && (pValue<0.001)) {
+    while ((possResult > 0) && (pValue<0.01)) {
       pValue = binom.test(possResult, numAnswers, twoOptions, alternative = "two.sided")
       possResult= possResult-1
     }
@@ -66,7 +66,7 @@ pbinom(yourResult,nAnswers,0.5,lower.tail=FALSE)
     
     possResult <-0
     pValue = 0
-    while ((possResult < numAnswers) && (pValue< 0.001)) {
+    while ((possResult < numAnswers) && (pValue< 0.01)) {
       pValue = binom.test(possResult, numAnswers, twoOptions, alternative = "two.sided")
       possResult= possResult+1
       print(pValue)
