@@ -3,10 +3,6 @@ Plots a line plot (classical categorical perception graph) with a red ribbon for
 
 ## Expected input 
 A Excel file with the following format:
-* Stimuli	Answer	nAnswers
-* -0.88	Statement	64
-
-
 
 Stimuli | Answer | nAnswers
 ------------ | ------------- | -------------
